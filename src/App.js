@@ -1,7 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import { MyComponent } from './MyComponent';
+import {useState} from 'react';
 
 function App() {
+
+  const onBtnClick = () => {
+    
+    console.log('btn clicked!')
+    setCount(count + 1)
+  }
+
+  const [count, setCount] = useState(0)
+
+  
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +30,7 @@ function App() {
         >
           Learn React
         </a>
+        <MyComponent title = 'React' onButtonClick = {onBtnClick} count = {count}  />
       </header>
     </div>
   );
